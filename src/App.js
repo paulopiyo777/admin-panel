@@ -7,6 +7,7 @@ import jsonServerProvider from "ra-data-json-server";
 
 // fetch data from the REST API
 const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
+
 const App = () => (
   <Admin dataProvider={dataProvider}>
     <Resource

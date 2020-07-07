@@ -13,6 +13,10 @@ import {
   Create,
 } from "react-admin";
 
+const PostTitle = ({ record }) => {
+  return <span>Post {record ? `"${record.title}"` : ""}</span>;
+};
+
 // render user posts as a list
 export const PostList = (props) => (
   <List {...props}>
@@ -29,7 +33,7 @@ export const PostList = (props) => (
 
 // functionality to edit posts
 export const PostEdit = (props) => (
-  <Edit {...props}>
+  <Edit title={<PostTitle />} {...props}>
     <SimpleForm>
       <TextInput disabled source='id' />
       <ReferenceInput source='userId' reference='users'>
